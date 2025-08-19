@@ -14,7 +14,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await axiosInstance.get("/auth/checkAuth");
       setAuthUser(response.data);
-      console.log(response.data);
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message);

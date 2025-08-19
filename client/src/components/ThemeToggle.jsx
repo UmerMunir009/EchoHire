@@ -1,8 +1,10 @@
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "../context/ThemeContext"
+import { useState } from "react"
 
 const ThemeToggle = () => {
   const {setTheme } = useTheme()
+  const [selectedTheme,setSeletedTheme]=useState('')
 
   const themes = [
     { value: "light", label: "Light", icon: Sun },
@@ -14,8 +16,11 @@ const ThemeToggle = () => {
       {themes.map(({ value, label, icon: Icon }) => (
         <button
           key={value}
-          onClick={() => setTheme(value)}
-          className={` flex justify-center items-center gap-1  cursor-pointer border-border border-1 rounded-full px-2 py-1`}
+          onClick={() =>{
+            setSeletedTheme(value)
+             setTheme(value)
+          }}
+          className={` flex justify-center items-center gap-1  cursor-pointer border-border border-1 rounded-full px-2 py-1 ${selectedTheme===value?'bg-amber-600':''}`}
           
         >
           <Icon size={16} />

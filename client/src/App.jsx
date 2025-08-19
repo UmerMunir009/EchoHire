@@ -14,7 +14,7 @@ const App = () => {
 
   if(isCheckingAuth && !authUser){
     return <div className='flex justify-center items-center h-screen'>
-      <Loader className='size-10 text-white animate-spin'/>
+      <Loader className='size-10 text-[var(--color-border)] animate-spin'/>
     </div>
   }
   return (
