@@ -1,6 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Outfit:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-*{
- font-family: "Mona Sans", sans-serif;
+@theme {
+  --color-background:#f8fafc ;
+  --color-foreground: #0f172a;
+  --color-border: #C48006
+}
+
+.dark {
+  --color-background: #0f172a;
+  --color-foreground: #f8fafc;
+  --color-border: #C48006
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --color-background: #0f172a;
+    --color-foreground: #f8fafc;
+  }
+} */
+
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
