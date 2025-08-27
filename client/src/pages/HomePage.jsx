@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth } from "./../customHooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import HeroSection from "../components/HeroSection";
 
 const HomePage = () => {
   // const { Logout } = useAuth();
@@ -12,8 +13,9 @@ const HomePage = () => {
   // };
 
   return (
-    <div className=" min-h-screen">
+    <div className="min-h-screen">
     <Navbar />
+    <HeroSection/>
     </div>
   );
 };
