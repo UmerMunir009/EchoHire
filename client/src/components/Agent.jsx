@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Mic, Video, Repeat, X } from "lucide-react";
+import axiosInstance from '../utils/axios'
 
 const Agent = ({userName,type}) => {
     const messages=[
         "Hi,How are you?",
         "I'm fine.",
         "What do you want to learn today?",
-        "I want to learn DSA"
+        "I want to learn React.js ",
+        "React is old now.Learn modern that is Next Js",
+        "OK,then i will go for Next Js.I will go with mixture of Next js and little bit of Node as well"
     ]
     const lastMessage=messages[messages.length-1]
+
+    useEffect(() => {
+    const sendMessages = async () => {
+      try {
+        const res = await axiosInstance.post("/gemini/generate-questions", {
+         paragraph: messages
+        });
+        console.log("Response from backend:", res.data);
+      } catch (error) {
+        console.error("Error sending messages:", error);
+      }
+    };
+
+    sendMessages();
+  }, [messages]);
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground pb-10">
       <h1 className="font-bold text-xl sm:text-3xl">Interview Generation</h1>

@@ -43,6 +43,9 @@ module.exports = {
       PASSWORD_UPDATED : "Password Updated",
       PROFILE_UPDATED : "Profile Updated",
       UPDATE_FAILED : "Update failed",
-      LOGOUT:'Logout successfully'
+      LOGOUT:'Logout successfully',
+      SUCCESS:'Generated Successfully',
+      ERROR:"Internal server error"
+      
     },
   };
