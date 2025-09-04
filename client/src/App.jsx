@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage'
 import { useAuth } from './customHooks/useAuth'
 import {Loader} from 'lucide-react'
 import { Toaster } from 'react-hot-toast';
+import InterviewCreationPage from './pages/InterviewCreationPage'
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='/' element={authUser?<HomePage/>:<Navigate to={'/sign-up'}/>}/>
         <Route path='/sign-up' element={!authUser?<SignUpPage/>:<Navigate to={'/'}/>}/>
         <Route path='/login' element={!authUser?<LoginPage/>:<Navigate to={'/'}/>}/>
+        <Route path='/interview-creation' element={authUser?<InterviewCreationPage/>:<Navigate to={'/login'}/>}/>
       </Routes>
     </div>
   )

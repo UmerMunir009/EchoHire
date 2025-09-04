@@ -121,7 +121,7 @@ const YourInterviews = () => {
             </span>
 
             <div className="flex justify-start mb-4">
-              <div className="w-14 h-14 rounded-full bg-blue-800 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-full bg-blue-00 flex items-center justify-center">
                 <span className="text-white font-bold text-xl">
                   {interview.role.charAt(0)}
                 </span>

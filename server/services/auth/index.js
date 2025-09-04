@@ -143,3 +143,69 @@ module.exports = {
   updateProfile,
   checkAuth,
 };
+
+
+
+// const signup = asyncErrorHandler(async (req, res) => {
+//   const { name, email, password } = req.body;
+
+//   const isExist = await User.findOne({ where: { email }, raw: true });
+
+//   if (isExist) {
+//     return res.status(STATUS_CODES.CONFLICT).json({
+//       statusCode: STATUS_CODES.CONFLICT,
+//       message: "Email already used.",
+//     });
+//   }
+//   const salt = await bcrypt.genSalt(10);
+//   const hashedPassword = await bcrypt.hash(password, salt);
+
+//   const verificationCode = crypto.randomInt(100000, 999999).toString();
+
+//   const userData = {
+//     name,
+//     email,
+//     password: hashedPassword,
+//     verified: false,
+//     verificationCode,
+//     // profilePic:public_id
+//   };
+//   const data = await User.create(userData);
+
+//  const transporter = nodemailer.createTransport({
+//   host: process.env.SMTP_HOST,
+//   port: process.env.SMTP_PORT,
+//   auth: {
+//     user: process.env.SMTP_USER,
+//     pass: process.env.SMTP_PASS,
+//   },
+// });
+
+// await transporter.sendMail({
+//   from: `"EchoHire" <${process.env.EMAIL_FROM}>`, 
+//   to: email, 
+//   subject: "Verify your email",
+//   text: `Your verification code is: ${verificationCode}`,
+// });
+
+
+
+
+
+
+//   const user = await User.findByPk(data.id, { raw: true }); // plain object (very important)
+//    const { profilePic, ...userWithoutPic } = user;
+//   let token = generateToken(userWithoutPic);
+//   res.cookie("token", token, {
+//     maxAge: 5 * 24 * 60 * 60 * 1000,
+//     httpOnly: true,
+//     sameSite: "none",   // allow cross-site cookie
+//     secure: true,       // required when sameSite='none'
+//   });
+
+//   res.status(STATUS_CODES.SUCCESS).json({
+//     statusCode: STATUS_CODES.SUCCESS,
+//     message: TEXTS.CREATED,
+//     data: data,
+//   });
+// });
